@@ -305,6 +305,8 @@ root@ruo91:~# ssh `docker inspect -f '{{ .NetworkSettings.IPAddress }}' kubernet
 Container의 이름은 nginx, Label은 production, Docker images는 ruo91 사용자의 nginx 이미지, 실행 갯수는 20개, Master 서버의 API Server 정보를 입력 하여 실행 해봅니다.
 ```sh
 root@kubernetes-client:~# kubectl run-container nginx -l name=production --image=ruo91/nginx --replicas=20 -s 172.17.1.4:8080
+W0921 08:19:01.937532      82 cmd.go:184] run-container is DEPRECATED and will be removed in a future version. Use run instead.
+replicationcontroller "nginx" created
 ```
 ```sh
 CONTROLLER   CONTAINER(S)   IMAGE(S)      SELECTOR          REPLICAS
