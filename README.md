@@ -309,6 +309,7 @@ W0921 08:19:01.937532      82 cmd.go:184] run-container is DEPRECATED and will b
 replicationcontroller "nginx" created
 ```
 ```sh
+root@kubernetes-client:~# kubectl get rc  -s 172.17.1.4:8080
 CONTROLLER   CONTAINER(S)   IMAGE(S)      SELECTOR          REPLICAS
 nginx        nginx          ruo91/nginx   name=production   20
 ```
