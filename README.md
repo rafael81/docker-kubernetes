@@ -11,6 +11,16 @@ Kubernetes의 대해서는 아래 주소 또는 구글을 통해 참고 하시�
 (https://github.com/googlecloudplatform/kubernetes/tree/release-1.0)
 
 link: http://www.yongbok.net/blog/google-kubernetes-container-cluster-manager/
+#### - Test Version
+```json
+{
+  "major": "1",
+  "minor": "1+",
+  "gitVersion": "v1.1.0-alpha.1.1059+c7a28d7091fa94",
+  "gitCommit": "c7a28d7091fa944488ba291285940867c4c11a6b",
+  "gitTreeState": "clean"
+}
+```
 
 #### - Clone
 ------------
@@ -88,8 +98,8 @@ root@ruo91:~# docker run -d --name="kubernetes-master" -h "kubernetes-master" ku
 Kubernetes Client의 kubectl 명령어를 통해 작업이 보내어지면 실제로 Docker images를 받아오고 Container를 실행 하는 등의 역할을 담당 하는 곳이며,
 적절하게 2개의 Container를 실행 하도록 합니다. 실행시 --privileged 옵션이 활성화가 되어있어야 Container 안에서 Docker 사용이 가능 해집니다.
 ```sh
-root@ruo91:~# docker run -d --name="kubernetes-minion-0" -h "kubernetes-minion-0" --privileged=true -v /dev:/dev kubernetes:minion
-root@ruo91:~# docker run -d --name="kubernetes-minion-1" -h "kubernetes-minion-1" --privileged=true -v /dev:/dev kubernetes:minion
+root@ruo91:~# docker run -d --name="kubernetes-minion-0" -h "kubernetes-minion-0" --privileged=true kubernetes:minion
+root@ruo91:~# docker run -d --name="kubernetes-minion-1" -h "kubernetes-minion-1" --privileged=true kubernetes:minion
 ```
 
 ### Kubernetes Client
