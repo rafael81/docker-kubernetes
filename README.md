@@ -56,12 +56,12 @@ root@ruo91:~# docker build --rm -t kubernetes:minion -f 03_kubernetes-minion .
 #### - Run
 ------------
 ### HostOS 설정
-Ubuntu 14.04 LTS 기준으로 /etc/default/docker.io 파일에 DOCKER_OPTS 변수에 소켓을 추가 후 Docker를 재시작 합니다.
+Ubuntu 14.04 LTS 기준으로 /etc/default/docker 파일에 DOCKER_OPTS 변수에 소켓을 추가 후 Docker를 재시작 합니다.
 (CentOS는 /etc/sysconfig/docker 파일을 수정하시면 됩니다.)
 
 - Ubuntu
 ```sh
-root@ruo91:~# sed -i '/^\#DOCKER_OPTS/ s:.*:DOCKER_OPTS=\"\-\-dns 8.8.8.8 \-\-dns 8.8.4.4 \-H unix\:\/\/\/var\/run\/docker.sock\":' /etc/default/docker.io
+root@ruo91:~# sed -i '/^\#DOCKER_OPTS/ s:.*:DOCKER_OPTS=\"\-\-dns 8.8.8.8 \-\-dns 8.8.4.4 \-H unix\:\/\/\/var\/run\/docker.sock\":' /etc/default/docker
 root@ruo91:~# service docker.io restart
 ```
 - CentOS 7
